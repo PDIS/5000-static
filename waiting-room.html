@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<title>振興五倍券</title>
+<base href="https://hph.5000.gov.tw/hpg/webLogin">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="振興五倍券">
+<meta name="keywords" content="振興五倍券">
+<meta name="author" content="振興五倍券">
+
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+<link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/icomoon/style.css">
+<link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+<!--[if IE 9]>
+  <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
+<![endif]-->
+
+
+</head>
+<body data-nojs="您的瀏覽器似乎不支援 JavaScript 語法，但沒關係，這並不會影響到內容的陳述。如需要選擇適合您的字級大小，可利用鍵盤 Ctrl + (+)放大 (-)縮小。如需要回到上一頁，可使用瀏覽器提供的 Alt + 左方向鍵(←)。如需要列印，可利用鍵盤 Ctrl + p 使用瀏覽器提供的列印功能。">
+<span id="signObject"></span>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-logo">
+<div class="container-fluid">
+<a href="#U" name="U" class="key-top key-text d-none d-md-block m-0 p-0" title="上方功能區塊" accesskey="U" tabindex="3">:::</a> <a href="https://5000.gov.tw/" class="logo text-center" tabindex="2" title="Logo"> <span class="d-block d-lg-none"> <img src="assets/images/logo-light.png" alt="LOGO" height="40" tabindex="1" title="振興五倍券">
+</span>
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item active"><a href="https://5000.gov.tw/" class="logo text-center" tabindex="2" title="Logo"> <span class="d-none d-lg-inline-block"> <img src="assets/images/logo-light.png" alt="LOGO" height="40" tabindex="1" title="振興五倍券">
+</span>
+</a></li>
+</ul>
+
+</div>
+</div>
+<div id="functionArea_timer" class="d-none"></div>
+
+</nav>
+
+
+
+<div class="wrapper">
+<div class="content-page img-bg-box">
+<div class="container-fluid ">
+<a href="#C" title="中央內容區塊" accesskey="C" class="key-text" name="C" tabindex="1">:::</a>
+<div class="pro-box" id="indexDiv">
+<h2 class="title-con style-line2"><span id="time-remaining">
+<noscript>
+因預訂踴躍，系統繁忙，請稍候
+          {{#waitTimeKnown}}…{{/waitTimeKnown}}
+          {{^waitTimeKnown}}{{#queueIsFull}}……{{/queueIsFull}}
+          {{^queueIsFull}}。{{/queueIsFull}}{{/waitTimeKnown}}
+
+     </noscript>
+</span></h2>
+<p class="title-sm" id="en-1">請先備妥健保卡或自然人憑證、讀卡機。</p>
+<p>                <strong>
+                  （<span id="en-2">本頁面會自動更新。前次更新時間：</span><span id="last-updated"></span>）
+                </strong></p>
+<div class="row" id="ch-only-1">
+<div class="col-12 col-lg-4 card-item pr-0 d-none d-lg-block">
+<div class="card">
+<div class="card-header b-blue">
+<p class="card-title">健保卡 </p>
+<span style="color: red">&nbsp; </span>
+</div>
+<div class="card-body b-blue">
+<p class="text-white">
+登入方式：<br>健保卡、讀卡機、<br /> 註冊密碼
+</p>
+<span  title="健保卡＋註冊密碼" code="2" class="btn btn-bordered-danger">因預訂踴躍，系統繁忙，請稍候…</span>
+
+</div>
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mlogin.aspx" class="small-text" title="[另開新視窗]衛生福利部中央健康保險署_健保卡網路註冊服務" alt="如何取得註冊密碼？" target="_blank" rel="noopener noreferrer">如何取得註冊密碼？</a> <a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mUserForget.aspx" class="small-text" title="[另開新視窗]健保卡網路服務註冊-忘記註冊密碼" alt="忘記註冊密碼怎麼辦？" target="_blank" rel="noopener noreferrer">忘記註冊密碼怎麼辦？</a>
+</div>
+</div>
+<div class="col-12 col-lg-4 card-item pr-0">
+<div class="card">
+<div class="card-header b-yellow">
+<p>健保快易通APP</p>
+<span style="color: red">&nbsp; </span>
+</div>
+<div class="card-body b-yellow">
+<p class="text-white">
+登入方式：<br>健保快易通APP、OTP認證碼<br /> <br />
+</p>
+<span href="#nhapp" title="健保快易通APP、OTP認證碼" code="6" class="btn btn-bordered-danger waves-effect waves-light btn-block">因預訂踴躍，系統繁忙，請稍候…</span>
+
+
+</div>
+<a href="https://ws.5000.gov.tw/001/Upload/406/relfile/9159/4675/25d96fe1-1d7e-4963-a34f-f5b6be69eb4b.pdf" class="small-text" target="_blank" rel="noopener noreferrer" title="使用健保快易通APP認證碼">使用健保快易通APP認證碼</a>
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mlogin.aspx" class="small-text" title="[另開新視窗]健保卡網路服務註冊" alt="如何綁定健保快易通APP？" target=_blank rel="noopener noreferrer">如何綁定健保快易通APP？</a>
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mUserForget.aspx" class="small-text" title="[另開新視窗]健保卡網路服務註冊-忘記註冊密碼" alt="忘記註冊密碼怎麼辦？" target=_blank rel="noopener noreferrer">忘記註冊密碼怎麼辦？</a>
+</div>
+</div>
+<div class="col-12 col-lg-4 card-item pr-0  d-none d-lg-block">
+<div class="card">
+<div class="card-header b-red">
+<p>自然人憑證
+</p>
+<span style="color: red">&nbsp; </span>
+</div>
+<div class="card-body b-red">
+<p class="text-white">
+登入方式：<br>自然人憑證、讀卡機<br /> <br />
+</p>
+<span href="#moica" title="自然人憑證" code="1" class="btn btn-bordered-danger waves-effect waves-light btn-block">因預訂踴躍，系統繁忙，請稍候…</span>
+</div>
+<a href="https://moica.nat.gov.tw/faq_in_c_18_1.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_申請資格及方式" alt="如何取得自然人憑證？">如何取得自然人憑證？</a>
+<a href="https://moica.nat.gov.tw/unblockcard.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_忘記PIN碼/鎖卡解碼" alt="忘記PIN碼怎麼辦？">忘記PIN碼怎麼辦？</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pro-box" id="sysCheckDiv" style="display: none">
+<h1 class="title-con style-line2">
+<span><i class="fas fa-shield-alt mr-1"></i>系統環境檢查</span>
+</h1>
+<p class="title-sm" id="sysCheckTitle"></p>
+<div class="row" id="ch-only-1">
+<div class="col-12">
+
+<div class="table-responsive mt-3">
+<table class="table mb-0 table-striped">
+<thead class="thead-dark b-blue">
+<tr>
+<th> 檢查項目</th>
+<th> 檢查狀態</th>
+<th> 是否通過</th>
+</tr>
+</thead>
+<tbody>
+<tr id="osArea">
+<td>作業系統 </td>
+<td><span id="osInfo"></span></td>
+<td><span class="text-success" id="osStatus"></span></td>
+</tr>
+<tr id="browserArea">
+<td>瀏覽器</td>
+<td><span id="browserInfo"></span></td>
+<td><span class="text-success" id="browserStatus"></span></td>
+</tr>
+<tr id="componentArea">
+<td><span id="componentName"></span></td>
+<td><span id="componentInfo"></span>&nbsp;
+<button type="button" class="btn btn-warning btn-rounded btn-sm waves-effect waves-light ml-1" id="btnReCheckComponent" title="重新檢測" alt="重新檢測">重新檢測</button></td>
+<td><span class="text-success" id="componentStatus"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="con-btn">
+<button class="btn btn-bordered-danger btn-rounded btn-lg waves-effect waves-light" id="btnSysCheckPre" style="display: none;" title="上一步" alt="上一步"> 上一步</button>
+<button class="btn btn-bordered-danger btn-rounded btn-lg waves-effect waves-light" id="btnSysCheckNext" style="display: none;" title="系統檢查完畢，前往身分驗證頁面" alt="系統檢查完畢，前往身分驗證頁面">系統檢查完畢，前往身分驗證頁面</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="pro-box" id="nhcaModal" style="display: none">
+<h1 class="title-con style-line2">
+<i class="far fa-address-card"></i> <span>身分驗證</span>
+</h1>
+<p class="title-sm">健保卡、註冊密碼</p>
+<div class="row">
+<div class="col-12"></div>
+<div class="col-12 col-md-10 offset-md-1 mt-2 verifl-con">
+<form role="form">
+<div class="form-group row">
+<label for="nhcaModal_CardStatus" class="col-12 col-md-3  col-form-label">身分驗證</label>
+<div class="col-12 col-md-9">
+<p class="form-control-plaintext text-success" style="text-align: left" name="iwiDownload_cardStatus" id="iwiDownload_cardStatus">偵測中...</p>
+</div>
+</div>
+<div class="form-group row required">
+<label class="col-md-3 col-form-label" for="nhcaModal_idn" title="身分證號/統一證號"><sup>*</sup><span>身分證號/統一證號</span></label>
+<div class="col-12 col-md-9">
+<input type="text" class="form-control" id="nhcaModal_idn" title="請輸入身分證號/居留證號最長10位" placeholder="請輸入身分證號/居留證號最長10位" title="請輸入身分證號/居留證號最長10位" autocomplete="off" onkeyup="this.value=this.value.toUpperCase();" maxlength="10">
+</div>
+</div>
+<div class="form-group row required">
+<label class="col-md-3 col-form-label" for="nhcaModal_pin"><sup>*</sup><span>註冊密碼</span></label>
+<div class="col-12 col-md-9">
+<input type="password" class="form-control" id="nhcaModal_pin" title="請輸入密碼最長12位" placeholder="請輸入密碼最長12位" autocomplete="off" maxlength="20">
+</div>
+</div>
+<div class="small-text-item">
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mlogin.aspx" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]衛生福利部中央健康保險署_健保卡網路註冊服務" alt="如何取得註冊密碼？">如何取得註冊密碼？</a>
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mUserForget.aspx" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]健保卡網路服務註冊-忘記註冊密碼" alt="忘記註冊密碼怎麼辦？">忘記註冊密碼怎麼辦？</a>
+</div>
+<div class="btn-box">
+<button id="btnNhcaReCheckCard" type="button" class="btn btn-outline-dark btn-lg waves-effect waves-light" title="重新檢測">
+重新檢測</button> <button type="button" id="btnNhcaDoLogin" class="btn btn-outline-dark btn-lg waves-effect waves-light" title="執行身分認證">執行身分認證
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="pro-box" id="moicaModal" style="display: none">
+<h1 class="title-con style-line2">
+<span><i class="far fa-address-card mr-1"></i>身分驗證</span>
+</h1>
+<p class="title-sm">請備妥自然人憑證及PIN碼</p>
+<div class="row">
+<div class="col-12 col-md-10 offset-md-1 mt-2 verifl-con">
+<form role="form">
+<div class="form-group row">
+<label for="moicaModal_CardStatus" class="col-12 col-md-3  col-form-label">讀卡機狀態</label>
+<div class="col-12 col-md-9">
+<p class="form-control-plaintext" style="text-align: left" name="iwiDownload_cardStatus" id="mociaiwiDownload_cardStatus">
+<span>偵測中...</span>
+</p>
+</div>
+</div>
+<div class="form-group row required">
+<label for="moicaModal_idn" class="col-md-3 col-form-label" title="身分證號/統一證號"><sup>*</sup><span>身分證號/統一證號</span></label>
+<div class="col-md-9">
+<input type="text" class="form-control" id="moicaModal_idn" title="請輸入身分證號/居留證號最長10位" autocomplete="off" placeholder="請輸入身分證號/居留證號最長10位" onkeyup="this.value=this.value.toUpperCase();" maxlength="10">
+</div>
+</div>
+<div class="form-group row required">
+<label for="moicaModal_pin" class="col-md-3 col-form-label" title="PIN碼"><sup>*</sup><span>PIN碼</span></label>
+<div class="col-md-9">
+<input type="password" class="form-control" id="moicaModal_pin" title="請輸入PIN碼" placeholder="********" autocomplete="off" maxlength="8">
+</div>
+</div>
+</form>
+<div class="small-text-item">
+<a href="https://moica.nat.gov.tw/faq_in_c_18_1.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_申請資格及方式" alt="如何取得自然人憑證？">如何取得自然人憑證？</a>
+<a href="https://moica.nat.gov.tw/unblockcard.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_忘記PIN碼/鎖卡解碼" alt="忘記PIN碼怎麼辦？">忘記PIN碼怎麼辦？</a>
+</div>
+<div class="btn-box">
+<button type="button" id="btnMoicaReCheckCard" class="btn btn-outline-dark btn-lg waves-effect waves-light" title="重新檢測">重新檢測</button> <button type="button" id="btnMoicaDoLogin" class="btn btn-outline-dark btn-lg waves-effect waves-light" title="執行身分認證">執行身分認證</button>
+</div>
+</div>
+</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<div class="pro-box" id="nhOtpModal" style="display: none">
+<h1 class="title-con style-line2">
+<span>身分驗證</span>
+</h1>
+<p class="title-sm">健保快易通APP、OTP認證碼</p>
+<div class="row">
+<div class="col-12 col-md-10 offset-md-1 mt-2 verifl-con">
+<form role="form">
+<div class="form-group row required">
+<label class="col-md-3 col-form-label" title="請輸入身分證號/居留證號最長10位" for="otpIdn"><sup>*</sup><span>身分證號/統一證號</span></label>
+<div class="col-md-9">
+<input type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="otpIdn" placeholder="請輸入身分證號/居留證號最長10位" autocomplete="off" placeholder="" onkeyup="" maxlength="10" required>
+</div>
+</div>
+<div class="form-group row required">
+<label for="nhOtpModal_otpCode" class="col-md-3 col-form-label"><sup>*</sup><span>健保卡OTP認證碼</span></label>
+<div class="col-md-9">
+<input type="password" class="form-control" id="otpCode" title="健保卡OTP認證碼" placeholder="請輸入OTP認證碼" autocomplete="off" maxlength="6">
+</div>
+</div>
+<div class="form-group row required">
+<label class="col-md-3 col-form-label" for="otpcaptcha"><sup>*</sup><span>圖形驗證碼</span></label>
+<div class="col-md-9">
+<input type="text" id="otpcaptcha" class="form-control" maxlength="6" placeholder="圖形驗證碼" autocomplete="off" required> <span toggle="#password-field1" class="field-code">
+
+
+<img src="./images/sound.png" style="cursor:pointer;" onclick="hpg.vCode.playMp3Code('captchaMp3','captchaMp3Source');" title="語音播放圖形驗證碼" alt="語音播放圖形驗證碼" border="0">
+
+<img src="#" id="otpCheckCode" onclick="hpg.vCode.createCode('otpCheckCode')" style="cursor: pointer;" title="圖形驗證碼" alt="圖形驗證碼" />
+
+
+<img src="./images/soundrenew.png" title='看不清楚換一張' alt='看不清楚換一張' style="cursor:pointer;" border="0">
+
+</span>
+<div class="invalid-feedback">錯誤訊息</div>
+<audio id="captchaMp3">
+<source type="audio/mpeg" id="captchaMp3Source">
+<span>Your browser does not support the audio element.</span>
+</audio>
+</div>
+</div>
+</form>
+<div class="small-text-item">
+<a href="https://ws.5000.gov.tw/001/Upload/406/relfile/9159/4675/25d96fe1-1d7e-4963-a34f-f5b6be69eb4b.pdf" class="small-text" target="_blank" rel="noopener noreferrer" title="使用健保快易通APP認證碼">使用健保快易通APP認證碼</a>
+<a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mlogin.aspx" class="small-text" target="_blank" rel="noopener noreferrer" title="如何綁定健保快易通APP？">如何綁定健保快易通APP？</a> <a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mUserForget.aspx class=" small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]健保卡網路服務註冊-忘記註冊密碼">忘記註冊密碼怎麼辦？</a>
+</div>
+<div class="btn-box">
+<button id="btnNhOtpDoLogin" class="btn btn-outline-dark btn-lg waves-effect waves-light" title="執行身分認證">執行身分認證</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row text-center">
+<div class="col" id="doLoginDiv"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<footer class="footer" id="ch-only-2">
+
+<a href="javascript:void(0)" id="Accesskey_Z" accesskey="Z" title="下方選單連結區，此區塊列有[使用說明]、[政府網站資料開放宣告]、[資訊安全政策]、[隱私權公告]、[快速鍵使用說明]等連結" class="key-text">:::</a>
+<div class="foot-btm">
+<div class="container">
+<div class="row">
+<div class="col-12 col-lg-12">
+<p>振興券政策問題：請撥免付費 1988 紓困振興專線（服務時間 8:30 至 18:30 ）</p>
+<p>建議使用&nbsp;Chrome、Edge、Safari、Firefox&nbsp;以上版本之瀏覽器，螢幕解析度&nbsp;1280&nbsp;X&nbsp;800&nbsp;以上瀏覽</p>
+<p>關貿網路股份有限公司製作，<span>更新日期：&nbsp;2021&nbsp;年&nbsp;9&nbsp;月&nbsp;22&nbsp;日</span></p>
+<p>Copyright © 2021 振興五倍券</p>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</footer>
+
+
+</body>
+<script type="text/javascript" language="javascript" class="init">
+      var remainingEl = document.getElementById('time-remaining');
+      var waitTime = {{waitTime}};
+      var waitTimeKnown = {{waitTimeKnown}};
+      var queueIsFull = {{queueIsFull}};
+      var isEnglish = /en/.test(navigator.language);
+
+      var remainingString = (isEnglish ? 'System busy, please wait' : '因預訂踴躍，系統繁忙，請稍候');
+
+      if (!waitTimeKnown) {
+        remainingString += (queueIsFull ? '……' : '。');
+      } else {
+        if (waitTime <= 14) {
+          remainingString += '（' + waitTime + (isEnglish ? ( (waitTime === 1) ? ' minute）…' : ' minutes）…' ) : ' 分鐘）…');
+        } else {
+          remainingString += '…';
+        }
+      }
+
+      remainingEl.innerText = remainingString;
+
+      var date = new Date();
+      document.getElementById(
+        'last-updated'
+      ).innerText = date.toLocaleTimeString();
+
+if (isEnglish) {
+      document.getElementById('ch-only-1').innerText = '';
+      document.getElementById('ch-only-2').innerText = '';
+      document.getElementById('en-1').innerText = 'Please prepare NHI card/Citizen Digital Certificate and card reader, or install the NHI Mobile App.';
+      document.getElementById('en-2').innerText = 'This page will refreesh automatically. Last update:\xA0';
+}
+    </script>
+</html>   
