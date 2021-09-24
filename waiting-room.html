@@ -60,7 +60,7 @@
 <div class="pro-box" id="indexDiv">
 <h2 class="title-con style-line2"><span id="time-remaining">
 <noscript>
-因預訂踴躍，系統繁忙，請稍候
+系統作業中，已自動排隊，請稍候
           {{#waitTimeKnown}}…{{/waitTimeKnown}}
           {{^waitTimeKnown}}{{#queueIsFull}}……{{/queueIsFull}}
           {{^queueIsFull}}。{{/queueIsFull}}{{/waitTimeKnown}}
@@ -82,7 +82,7 @@
 <p class="text-white">
 登入方式：<br>健保卡、讀卡機、<br /> 註冊密碼
 </p>
-<span  title="健保卡＋註冊密碼" code="2" class="btn btn-bordered-danger">因預訂踴躍，系統繁忙，請稍候…</span>
+<span style="width: 100%"  title="健保卡＋註冊密碼" code="2" class="btn btn-bordered-danger">請稍候…</span>
 
 </div>
 <a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mlogin.aspx" class="small-text" title="[另開新視窗]衛生福利部中央健康保險署_健保卡網路註冊服務" alt="如何取得註冊密碼？" target="_blank" rel="noopener noreferrer">如何取得註冊密碼？</a> <a href="https://cloudicweb.nhi.gov.tw/cloudic/system/mUserForget.aspx" class="small-text" title="[另開新視窗]健保卡網路服務註冊-忘記註冊密碼" alt="忘記註冊密碼怎麼辦？" target="_blank" rel="noopener noreferrer">忘記註冊密碼怎麼辦？</a>
@@ -98,7 +98,7 @@
 <p class="text-white">
 登入方式：<br>健保快易通APP、OTP認證碼<br /> <br />
 </p>
-<span href="#nhapp" title="健保快易通APP、OTP認證碼" code="6" class="btn btn-bordered-danger waves-effect waves-light btn-block">因預訂踴躍，系統繁忙，請稍候…</span>
+<span href="#nhapp" title="健保快易通APP、OTP認證碼" code="6" class="btn btn-bordered-danger waves-effect waves-light btn-block">請稍候…</span>
 
 
 </div>
@@ -118,7 +118,7 @@
 <p class="text-white">
 登入方式：<br>自然人憑證、讀卡機<br /> <br />
 </p>
-<span href="#moica" title="自然人憑證" code="1" class="btn btn-bordered-danger waves-effect waves-light btn-block">因預訂踴躍，系統繁忙，請稍候…</span>
+<span href="#moica" title="自然人憑證" code="1" class="btn btn-bordered-danger waves-effect waves-light btn-block">請稍候…</span>
 </div>
 <a href="https://moica.nat.gov.tw/faq_in_c_18_1.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_申請資格及方式" alt="如何取得自然人憑證？">如何取得自然人憑證？</a>
 <a href="https://moica.nat.gov.tw/unblockcard.html" class="small-text" target="_blank" rel="noopener noreferrer" title="[另開新視窗]MOICA內政部憑證管理中心_忘記PIN碼/鎖卡解碼" alt="忘記PIN碼怎麼辦？">忘記PIN碼怎麼辦？</a>
@@ -351,7 +351,7 @@
       var queueIsFull = {{queueIsFull}};
       var isEnglish = /en/.test(navigator.language);
 
-      var remainingString = (isEnglish ? 'System busy, please wait' : '因預訂踴躍，系統繁忙，請稍候');
+      var remainingString = (isEnglish ? 'Please wait' : '系統作業中，已自動排隊，請稍候');
 
       if (!waitTimeKnown) {
         remainingString += (queueIsFull ? '……' : '。');
