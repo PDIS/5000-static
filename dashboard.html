@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:8080/hpg/CountHpgMain.jsp -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" /> -->
+
+<title>振興五倍券</title>
+
+
+<!-- <script type="text/javascript" src="https://emake.5000.gov.tw/hpg/js/pace/pace.min.js"></script> -->
+<script type="text/javascript" src="https://emake.5000.gov.tw/hpg/dist/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://emake.5000.gov.tw/hpg/dist/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://emake.5000.gov.tw/hpg/js/jquery/bootbox-custom.min.js"></script>
+<script type="text/javascript" src="https://emake.5000.gov.tw/hpg/js/jquery/jquery.sprintf.js"></script>
+
+<link rel="stylesheet"
+	href="https://emake.5000.gov.tw/hpg/dist/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://emake.5000.gov.tw/hpg/dist/css/AdminLTE.min.css">
+
+<link rel="stylesheet" href="https://emake.5000.gov.tw/hpg/css/css-loader.css">
+
+<script>
+	var maxSameCount = 5;
+	var sameCount = 0;
+	var delayTime = 300;
+
+	var maxStopCount = 15;
+	var stopCount = 0;
+
+	$(document).ready(function() {
+		execute();
+	});
+
+	var data = {
+		countOfLogin : "0",
+		countOfDegital : "0",
+		countOfGroupBinding: "0",
+		nowLoginNum : "0",
+		nowDegitalNum : "0",
+		nowGroupBindingNum : "0",
+		lastTime : "20200630010101",
+		countOfWebOrder: "0",
+		countOfKioskOrder: "0",
+		countOfSmarketReceive: "0",
+		countOfPostReceive: "0",
+		nowWebOrderNum : "0",
+		nowKioskOrderNum : "0",
+		nowSmarketReceivNum : "0",
+		nowPostReceiveNum : "0",
+		countTime :""
+	};
+
+	var show = function() {		
+
+
+		$('#countLoginArea').html(addComma(data.nowLoginNum));
+		$('#countDegitalArea').html(addComma(data.nowDegitalNum));
+		$('#countGroupBindingArea').html(addComma(data.nowGroupBindingNum));
+		$('#countWebOrderArea').html(addComma(data.nowWebOrderNum));
+		$('#countKioskOrderArea').html(addComma(data.nowKioskOrderNum));
+		$('#countSmarketReceiveArea').html(addComma(data.nowSmarketReceivNum));
+		$('#countPostReceiveArea').html(addComma(data.nowPostReceiveNum));
+
+		
+		if (Number(data.nowLoginNum) < Number(data.countOfLogin)) {
+
+			if(Number(data.countOfLogin) - Number(data.nowLoginNum )> 10000){
+				data.nowLoginNum = Number(data.countOfLogin)-1000;
+			}
+
+			if(Number(data.countOfLogin) - Number(data.nowLoginNum) > 101){
+				data.nowLoginNum = Number(data.nowLoginNum)+100;
+			}
+			data.nowLoginNum++;
+		}
+		if(Number(data.nowDegitalNum) < Number(data.countOfDegital)) {
+
+			if(Number(data.countOfDegital) - Number(data.nowDegitalNum )> 10000){
+				data.nowDegitalNum = Number(data.countOfDegital)-1000;
+			}
+			
+			if(Number(data.countOfDegital) - Number(data.nowDegitalNum)> 101){
+				data.nowDegitalNum = Number(data.nowDegitalNum)+100;
+			}
+			data.nowDegitalNum++;
+
+		}
+		if(Number(data.nowGroupBindingNum) < Number(data.countOfGroupBinding)) {
+
+			if(Number(data.countOfGroupBinding) - Number(data.nowGroupBindingNum )> 10000){
+				data.nowGroupBindingNum = Number(data.countOfGroupBinding);
+			}
+			
+			if(Number(data.countOfGroupBinding) - Number(data.nowGroupBindingNum )> 101){
+				data.nowGroupBindingNum = Number(data.nowGroupBindingNum)+100;
+			}
+			data.nowGroupBindingNum++;
+
+		}	
+
+		if(Number(data.nowWebOrderNum) < Number(data.countOfWebOrder)) {
+
+			if(Number(data.countOfWebOrder) - Number(data.nowWebOrderNum )> 10000){
+				data.nowWebOrderNum = Number(data.countOfWebOrder);
+			}
+			
+			if(Number(data.countOfWebOrder) - Number(data.nowWebOrderNum )> 101){
+				data.nowWebOrderNum = Number(data.nowWebOrderNum)+100;
+			}
+			data.nowWebOrderNum++;
+
+		}		
+		if(Number(data.nowKioskOrderNum) < Number(data.countOfKioskOrder)) {
+
+			if(Number(data.countOfKioskOrder) - Number(data.nowKioskOrderNum )> 10000){
+				data.nowKioskOrderNum = Number(data.countOfKioskOrder);
+			}
+			
+			if(Number(data.countOfKioskOrder) - Number(data.nowKioskOrderNum )> 101){
+				data.nowKioskOrderNum = Number(data.nowKioskOrderNum)+100;
+			}
+			data.nowKioskOrderNum++;
+
+		}
+
+		if(Number(data.nowSmarketReceivNum) < Number(data.countOfSmarketReceive)) {
+
+			if(Number(data.countOfSmarketReceive) - Number(data.nowSmarketReceivNum )> 10000){
+				data.nowSmarketReceivNum = Number(data.countOfSmarketReceive);
+			}
+			
+			if(Number(data.countOfSmarketReceive) - Number(data.nowSmarketReceivNum )> 101){
+				data.nowSmarketReceivNum = Number(data.nowSmarketReceivNum)+100;
+			}
+			data.nowSmarketReceivNum++;
+
+		}
+
+		if(Number(data.nowPostReceiveNum) < Number(data.countOfPostReceive)) {
+
+			if(Number(data.countOfPostReceive) - Number(data.nowPostReceiveNum )> 10000){
+				data.nowPostReceiveNum = Number(data.countOfPostReceive);
+			}
+			
+			if(Number(data.countOfPostReceive) - Number(data.nowPostReceiveNum )> 101){
+				data.nowPostReceiveNum = Number(data.nowPostReceiveNum)+100;
+			}
+			data.nowPostReceiveNum++;
+
+		}				
+
+
+		if(data.lastTime < getDateyyyymmdd()){
+			setTimeout(goQuery(), 3000);
+			data.lastTime = parseInt(getDateyyyymmdd()) + 5;			
+		} else{			
+			//do nothing			
+		}
+		
+		//if (data.nowtDegitalNum >= data.countOfPayed/*|| data.nowtDegitalNum >= data.countOfPayed*/) {			
+		//	setTimeout(goQuery(), 3000);
+		//	return;
+		//}
+		
+		setTimeout(show, 35);
+	};
+	function execute() {
+		console.log('execute');
+		goQuery();
+
+	}
+
+	function isSameCount(count1, count2) {
+		//
+		alert('isSameCount');
+		if (count1 == count2) {
+			sameCount++;
+			stopCount++;
+		} else {
+			delayTime = 300;
+			stopCount = 0;
+		}
+		console.log("stopCount >= maxStopCount:"+stopCount >= maxStopCount);
+		if (stopCount >= maxStopCount) {
+			$('#restartBtn').show();
+			return true;
+		}
+		if (sameCount >= maxSameCount) {
+			console.log("已經查詢" + sameCount + "次，申報次數皆為" + data.maxStopCount
+					+ "。將暫停自動查詢。");
+			//延長時間再繼續查詢
+			sameCount = 0;
+			setTimeout(show, delayTime);
+			delayTime += 300;
+			return true;
+		}
+		return false;
+
+	}
+	function goReStart() {
+		delayTime = 300;
+		stopCount = 0;
+		$('#restartBtn').hide();
+		goQuery();
+	}
+	function goQuery() {			
+		$.ajax({
+			url : "https://emake.5000.gov.tw/hpg/hpgCounterSeerviceMain.do",
+			type : "POST",
+			dataType : "json",
+			data : data,
+			async : false,
+			success : function(returnData) {
+				if (parseInt(returnData.code) < 0) {
+					alert(returnData.message);
+				} else {					
+					
+					//件數
+					data.countOfLogin = returnData.countOfLogin;
+					//次數
+					data.countOfDegital = returnData.countOfDegital;
+					//繳費數
+					data.countOfGroupBinding = returnData.countOfGroupBinding;
+					data.countOfWebOrder = returnData.countOfWebOrder;	
+					data.countOfKioskOrder = returnData.countOfKioskOrder;	
+					data.countOfSmarketReceive = returnData.countOfSmarketReceive;	
+					data.countOfPostReceive = returnData.countOfPostReceive;	
+					//上次傳送時間
+					data.lastTime = parseInt(getDateyyyymmdd()) + 3;
+					
+					$("#countTime").text("統計時間：" + returnData.countTime);	
+				
+					//if (isSameCount(data.nowApplyNum, data.countOfApply)) {
+						$('#countLoginArea').html(addComma(data.countOfLogin));
+						$('#countDegitalArea').html(addComma(data.countOfDegital));
+						$('#countGroupBindingArea').html(addComma(data.countOfGroupBinding));
+						$('#countWebOrderArea').html(addComma(data.countOfWebOrder));
+						$('#countKioskOrderArea').html(addComma(data.countOfKioskOrder));
+						$('#countSmarketReceiveArea').html(addComma(data.countOfSmarketReceive));
+						$('#countPostReceiveArea').html(addComma(data.countOfPostReceive));
+						
+						//console.log("countofpay:"+data.countOfPayed);
+						//return;
+					//}					
+					if (data.nowApplyNum == 0) { 
+						//當現在筆數為0則現在筆數以主機為主並重新查詢一次						
+						data.nowLoginNum = returnData.countOfLogin;
+						data.nowDegitalNum = returnData.countOfDegital;
+						data.nowtGroupBindingNum = returnData.countOfGroupBinding;			
+						
+						
+						data.nowWebOrderNum = returnData.countOfWebOrder;
+						data.nowKioskOrderNum = returnData.countOfKioskOrder;
+						data.nowSmarketReceivNum = returnData.countOfSmarketReceive;		
+						data.nowPostReceiveNum = returnData.countOfPostReceive;			
+						
+						
+						$('#countLoginArea').html(addComma(data.nowLoginNum));
+						$('#countDegitalArea').html(addComma(data.nowDegitalNum));
+						$('#countGroupBindingArea').html(addComma(data.nowtGroupBindingNum));
+						
+						$('#countWebOrderArea').html(addComma(data.nowWebOrderNum));
+						$('#countKioskOrderArea').html(addComma(data.nowKioskOrderNum));
+						$('#countSmarketReceiveArea').html(addComma(data.nowSmarketReceivNum));
+						$('#countPostReceiveArea').html(addComma(data.nowPostReceiveNum));
+						
+						data.lastTime = parseInt(getDateyyyymmdd()) + 15;
+						setTimeout(goQuery(), 3000);
+						return;
+					}
+					show();
+				}
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				alert("網路連線失敗");
+			}
+		});
+	}
+	/**
+	 * 加上千分號
+	 */
+	function addComma(data) {
+		var result = /^((-*\d+)|(0))$/.exec(Math.floor(data));
+		if (!/^((-*\d+)|(0))$/.test(data)) {
+			if (result != null) {
+				if (parseInt(result, 10)) {
+					data = result;
+				} else {
+					data = '0';
+				}
+			} else {
+				data = '0';
+			}
+		}
+		if (parseInt(data, 10) == 0) {
+			data = '0';
+		} else {
+			data = parseInt(data, 10).toString();
+		}
+
+		data += '';
+		var arr = data.split('.');
+		var re = /(\d{1,3})(?=(\d{3})+$)/g;
+		return arr[0].replace(re, '$1,')
+				+ (arr.length == 2 ? '.' + arr[1] : '');
+	}
+	
+	function getDateyyyymmdd(){
+		var date = new Date();
+		return date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2) + ("0" + date.getDate()).slice(-2) + ("0" + date.getHours() + 1 ).slice(-2) + ("0" + date.getMinutes()).slice(-2) + ("0" + date.getSeconds()).slice(-2);
+	}			
+</script>
+
+</head>
+<body>
+	<div class="container" style="width: 100%;">
+		<!-- 		<div class="row"> -->
+		<!-- 			<div class="col-md-6 col-sm-6 col-xs-6"> -->
+		<div>
+			<div id="loginPanel" class="panel panel-primary">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					振興五倍券 登入人次：
+				</div>
+				<div class="panel-body">
+					<!-- 警語 -->
+					<div class="row ">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center " style="font-size:5vw;" id="countLoginArea">18,529,286</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary col-md-6 col-sm-12 col-xs-12" "="">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					數位綁定人數：
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center" style="font-size:5vw;" id="countDegitalArea">2,507,879</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary  col-md-6 col-sm-12 col-xs-12">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					共同綁定人數
+:
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center " style="font-size:5vw;" id="countGroupBindingArea">888,853</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary col-md-6 col-sm-12 col-xs-12" "="">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					紙本預訂人數&nbsp;官網預定：
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center" style="font-size:5vw;" id="countWebOrderArea">87,364</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary  col-md-6 col-sm-12 col-xs-12">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					紙本預訂人數&nbsp;超商事務機：
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center " style="font-size:5vw;" id="countKioskOrderArea">80,493</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary col-md-6 col-sm-12 col-xs-12" "="">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					紙本領取人數&nbsp;超商超市：
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center" style="font-size:5vw;" id="countSmarketReceiveArea">0</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="loginPanel" class="panel panel-primary  col-md-6 col-sm-12 col-xs-12">
+				<div class="panel-heading" style="font-size:3vw;">
+					<!-- 標題 -->
+					紙本領取人數&nbsp;郵局:
+				</div>
+				<div class="panel-body col-md-12 col-sm-12 col-xs-12">
+					<!-- 警語 -->
+					<div class="row">
+						<div>
+							<div class="alert alert-info " role="alert">
+								<p class="text-info text-center " style="font-size:5vw;" id="countPostReceiveArea">0</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>					
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<span id="countTime" style="font-size:3vw;">統計時間：2021-09-25 09:27:01</span>
+			</div>	
+		</div>
+	</div>
+
+</body></html>
