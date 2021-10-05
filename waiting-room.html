@@ -2,7 +2,6 @@
 <html lang="zh-Hant">
 <head>
 <title>振興五倍券</title>
-<base href="https://emake.5000.gov.tw/hpg/webLogin">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="振興五倍券">
@@ -11,11 +10,11 @@
 
 <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-<link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+<link href="https://static.5000.gov.tw/select2.min.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="assets/css/bootstrap.css">
-<link rel="stylesheet" href="assets/css/icomoon/style.css">
-<link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://static.5000.gov.tw/bootstrap.css">
+<link rel="stylesheet" href="https://static.5000.gov.tw/style.css">
+<link href="https://static.5000.gov.tw/app.css" rel="stylesheet" type="text/css" />
 <!--[if IE 9]>
   <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
 <![endif]-->
@@ -32,7 +31,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-logo">
 <div class="container-fluid">
-<a href="#U" name="U" class="key-top key-text d-none d-md-block m-0 p-0" title="上方功能區塊" accesskey="U" tabindex="3">:::</a> <a href="https://5000.gov.tw/" class="logo text-center" tabindex="2" title="Logo"> <span class="d-block d-lg-none"> <img src="assets/images/logo-light.png" alt="LOGO" height="40" tabindex="1" title="振興五倍券">
+<a href="#U" name="U" class="key-top key-text d-none d-md-block m-0 p-0" title="上方功能區塊" accesskey="U" tabindex="3">:::</a> <a href="https://5000.gov.tw/" class="logo text-center" tabindex="2" title="Logo"> <span class="d-block d-lg-none"> <img src="https://static.5000.gov.tw/logo-light.png" alt="LOGO" height="40" tabindex="1" title="振興五倍券">
 </span>
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -271,27 +270,6 @@
 <label for="nhOtpModal_otpCode" class="col-md-3 col-form-label"><sup>*</sup><span>健保卡OTP認證碼</span></label>
 <div class="col-md-9">
 <input type="password" class="form-control" id="otpCode" title="健保卡OTP認證碼" placeholder="請輸入OTP認證碼" autocomplete="off" maxlength="6">
-</div>
-</div>
-<div class="form-group row required">
-<label class="col-md-3 col-form-label" for="otpcaptcha"><sup>*</sup><span>圖形驗證碼</span></label>
-<div class="col-md-9">
-<input type="text" id="otpcaptcha" class="form-control" maxlength="6" placeholder="圖形驗證碼" autocomplete="off" required> <span toggle="#password-field1" class="field-code">
-
-
-<img src="./images/sound.png" style="cursor:pointer;" onclick="hpg.vCode.playMp3Code('captchaMp3','captchaMp3Source');" title="語音播放圖形驗證碼" alt="語音播放圖形驗證碼" border="0">
-
-<img src="#" id="otpCheckCode" onclick="hpg.vCode.createCode('otpCheckCode')" style="cursor: pointer;" title="圖形驗證碼" alt="圖形驗證碼" />
-
-
-<img src="./images/soundrenew.png" title='看不清楚換一張' alt='看不清楚換一張' style="cursor:pointer;" border="0">
-
-</span>
-<div class="invalid-feedback">錯誤訊息</div>
-<audio id="captchaMp3">
-<source type="audio/mpeg" id="captchaMp3Source">
-<span>Your browser does not support the audio element.</span>
-</audio>
 </div>
 </div>
 </form>
